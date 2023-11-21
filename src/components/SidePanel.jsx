@@ -180,7 +180,7 @@ const Temp = styled.div`
     h1{
       color: #EC6E4C;
       font-family: Poppins;
-      font-size: 150px;
+      font-size: 90px;
       font-style: normal;
       font-weight: 300;
       line-height: 48px;
