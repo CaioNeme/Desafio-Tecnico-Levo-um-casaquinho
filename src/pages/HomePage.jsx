@@ -25,16 +25,17 @@ export default function HomePage() {
   return (
     <Conteiner>
       <SidePanel fahrenheit={fahrenheit} setFahrenheit={setFahrenheit} darkMode={darkMode} setDarkMode={setDarkMode} />
-      <Content>
+      <Content style={{ backgroundColor: darkMode ? '#2c2f30' : '#EFEFEF' }}>
         <Menu>
-          <h1 onClick={handleToday} style={{ color: today ? '#222' : '#C8C8C8' }}>Hoje</h1>
-          <h1 onClick={handleNextDays} style={{ color: nextDays ? '#222' : '#C8C8C8' }}>Próximos dias</h1>
+          <h1 onClick={handleToday} style={{ color: darkMode ? today ? '#ec6e4c' : '#C8C8C8' : today ? '#222' : '#C8C8C8' }}>Hoje</h1>
+          <h1 onClick={handleNextDays} style={{ color: darkMode ? nextDays ? '#ec6e4c' : '#C8C8C8' : nextDays ? '#222' : '#C8C8C8' }}>Próximos dias</h1>
         </Menu>
         <Local>
-          <h1>{weatherData?.name}</h1>
-          <p>Lat:  {weatherData?.coord?.lat}  Long: {weatherData?.coord?.lon}</p>
+          <h1 style={{ color: darkMode ? '#d4d0cb' : '#222' }}>{weatherData?.name}</h1>
+          <p style={{ color: darkMode ? '#d4d0cb' : '#222' }}>Lat:  {weatherData?.coord?.lat}  Long: {weatherData?.coord?.lon}</p>
         </Local>
         {today ? <Today fahrenheit={fahrenheit} setFahrenheit={setFahrenheit} darkMode={darkMode} setDarkMode={setDarkMode} /> : <NextDays fahrenheit={fahrenheit} setFahrenheit={setFahrenheit} darkMode={darkMode} setDarkMode={setDarkMode} />}
+        <Font style={{ color: darkMode ? '#d4d0cb' : '#222' }}>Dados fornecidos pela <a style={{ color: darkMode ? '#ec6e4c' : '#0364b8' }} target="_blank" href="https://openweathermap.org/api">Open Weather API</a></Font>
       </Content>
     </Conteiner>
   )
@@ -95,4 +96,14 @@ const Local = styled.div`
     font-weight: 400;
     line-height: 48px;
   }
+`;
+const Font = styled.p`
+  padding-left: 50px;
+  margin-top: 25px;
+  color: #222;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px;
 `;

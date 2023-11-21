@@ -4,8 +4,8 @@ import { WeatherContext } from '../context/WeatherContext';
 
 export default function Today(props) {
   const { weatherData } = useContext(WeatherContext)
-  const { fahrenheit, setFahrenheit } = props
-  const { darkMode, setDarkMode } = props
+  const { fahrenheit } = props
+  const { darkMode } = props
 
   return (
     <>
@@ -30,7 +30,6 @@ export default function Today(props) {
       <Casaco>
         Não, você não deve levar um casaquinho!
       </Casaco>
-      <Font>Dados fornecidos pela <a href="https://openweathermap.org/api">Open Weather API</a></Font>
     </>
   )
 }
@@ -83,16 +82,6 @@ const Casaco = styled.p`
   font-family: Poppins;
   font-size: 24px;
   font-style: italic;
-  font-weight: 400;
-  line-height: 48px;
-`;
-const Font = styled.p`
-  padding-left: 50px;
-  margin-top: 25px;
-  color: #222;
-  font-family: Poppins;
-  font-size: 24px;
-  font-style: normal;
   font-weight: 400;
   line-height: 48px;
 `;

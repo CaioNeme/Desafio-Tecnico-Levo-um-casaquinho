@@ -39,10 +39,10 @@ export default function SidePanel(props) {
 
   return (
     <>
-      <Panel>
+      <Panel style={{ backgroundColor: darkMode ? '#232526' : '#EFEFEF' }}>
         <Header>
-          <Casaquinho src={casaquinho} alt="casaquinho" />
-          <h1>Levo um casaquinho?</h1>
+          <Casaquinho style={{ backgroundColor: darkMode ? '#212324' : '#EFEFEF' }} src={casaquinho} alt="casaquinho" />
+          <h1 style={{ color: darkMode ? '#ec6e4c' : '#222' }}>Levo um casaquinho?</h1>
         </Header>
         <Search onSubmit={(event) => handleSubmit(event)}>
           <img src={search} alt="" />
@@ -53,12 +53,12 @@ export default function SidePanel(props) {
             <img src={sol} alt="" />
             <h1>{fahrenheit ? (weatherData?.main?.temp * 1.8 + 32).toFixed(2) + "° F" : weatherData?.main?.temp.toFixed(2) + "° C"}</h1>
           </div>
-          <p>{weatherData ? weatherData?.weather[0]?.description.charAt(0).toUpperCase() + weatherData?.weather[0]?.description.slice(1) : ""}</p>
+          <p style={{ color: darkMode ? '#d4d0cb' : '#212324' }}>{weatherData ? weatherData?.weather[0]?.description.charAt(0).toUpperCase() + weatherData?.weather[0]?.description.slice(1) : ""}</p>
         </Temp>
         <Line />
         <Day>
-          <p>{dayjs().format('DD/MM/YYYY')}</p>
-          <p>{dayjs().format('dddd') + ', ' + dayjs().format('hh:mm')}</p>
+          <p style={{ color: darkMode ? '#d4d0cb' : '#212324' }}>{dayjs().format('DD/MM/YYYY')}</p>
+          <p style={{ color: darkMode ? '#d4d0cb' : '#212324' }}>{dayjs().format('dddd') + ', ' + dayjs().format('hh:mm')}</p>
         </Day>
         <Toggle>
           <div>
@@ -66,18 +66,18 @@ export default function SidePanel(props) {
               <input onClick={() => handleFahrenheit()} type="checkbox" />
               <span className="slider round" />
             </label>
-            <p>ºF</p>
+            <p style={{ color: darkMode ? '#d4d0cb' : '#212324' }}>ºF</p>
           </div>
           <div>
             <label className="switch">
               <input onClick={() => handleDarkMode()} type="checkbox" />
               <span className="slider round" />
             </label>
-            <p>Dark Mode</p>
+            <p style={{ color: darkMode ? '#d4d0cb' : '#212324' }}>Dark Mode</p>
           </div>
         </Toggle>
         <Footer>
-          <p>Todos os direitos reservados. 2023.</p>
+          <p style={{ color: darkMode ? '#d4d0cb' : '#212324' }}>Todos os direitos reservados. 2023.</p>
         </Footer>
       </Panel>
     </>
