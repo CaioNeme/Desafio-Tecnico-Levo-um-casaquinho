@@ -51,7 +51,7 @@ export default function SidePanel(props) {
         <Temp>
           <div>
             <img src={sol} alt="" />
-            <h1>{fahrenheit ? (weatherData?.main?.temp * 1.8 + 32).toFixed(2) : weatherData?.main?.temp.toFixed(2)}</h1>
+            <h1>{fahrenheit ? (weatherData?.main?.temp * 1.8 + 32).toFixed(2) + "° F" : weatherData?.main?.temp.toFixed(2) + "° C"}</h1>
           </div>
           <p>{weatherData ? weatherData?.weather[0]?.description.charAt(0).toUpperCase() + weatherData?.weather[0]?.description.slice(1) : ""}</p>
         </Temp>
