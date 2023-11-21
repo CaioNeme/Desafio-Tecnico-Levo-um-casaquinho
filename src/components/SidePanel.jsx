@@ -42,11 +42,11 @@ export default function SidePanel(props) {
       <Panel style={{ backgroundColor: darkMode ? '#232526' : '#EFEFEF' }}>
         <Header>
           <Casaquinho style={{ backgroundColor: darkMode ? '#212324' : '#EFEFEF' }} src={casaquinho} alt="casaquinho" />
-          <h1 style={{ color: darkMode ? '#ec6e4c' : '#222' }}>Levo um casaquinho?</h1>
+          <h1 style={{ color: darkMode ? '#EFEFEF' : '#222' }}>Levo um casaquinho?</h1>
         </Header>
-        <Search onSubmit={(event) => handleSubmit(event)}>
+        <Search style={{ backgroundColor: darkMode ? '#2c2f30' : '#EFEFEF' }} onSubmit={(event) => handleSubmit(event)}>
           <img src={search} alt="" />
-          <input autoComplete="off" placeholder={'Procure por uma cidade'} value={cityName.city} name="city" onChange={handleChange} type="text" />
+          <input style={{ backgroundColor: darkMode ? '#2c2f30' : '#EFEFEF' }} autoComplete="off" placeholder={'Procure por uma cidade'} value={cityName.city} name="city" onChange={handleChange} type="text" />
         </Search>
         <Temp>
           <div>
@@ -64,14 +64,14 @@ export default function SidePanel(props) {
           <div>
             <label className="switch">
               <input onClick={() => handleFahrenheit()} type="checkbox" />
-              <span className="slider round" />
+              <span style={{ backgroundColor: darkMode ? '#464a4c' : '#d4d0cb' }} className="slider round" />
             </label>
             <p style={{ color: darkMode ? '#d4d0cb' : '#212324' }}>ºF</p>
           </div>
           <div>
             <label className="switch">
               <input onClick={() => handleDarkMode()} type="checkbox" />
-              <span className="slider round" />
+              <span style={{ backgroundColor: darkMode ? '#464a4c' : '#d4d0cb' }} className="slider round" />
             </label>
             <p style={{ color: darkMode ? '#d4d0cb' : '#212324' }}>Dark Mode</p>
           </div>
@@ -279,7 +279,7 @@ const Toggle = styled.div`
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: white;
+    background-color: #ec6e4c;
     -webkit-transition: .4s;
     transition: .4s;
   }
