@@ -5,6 +5,7 @@ export const WeatherContext = createContext();
 
 export const WeatherProvider = ({ children }) => {
   const [weatherData, setWeatherData] = useState(null)
+  const [icon, setIcon] = useState(null)
   const [city, setCity] = useState('Bauru')
 
   const getWeatherData = async () => {

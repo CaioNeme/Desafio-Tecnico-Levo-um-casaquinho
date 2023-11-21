@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import dayjs from 'dayjs'
 import casaquinho from '../assets/images/casaquinho.png'
 import search from '../assets/images/search.png'
-import sol from '../assets/images/sol.png'
 import { WeatherContext } from '../context/WeatherContext';
 
 export default function SidePanel(props) {
@@ -11,9 +10,15 @@ export default function SidePanel(props) {
   const { weatherData, setCity } = useContext(WeatherContext)
   const { fahrenheit, setFahrenheit } = props
   const { darkMode, setDarkMode } = props
+  const { mainColor } = props
   const [cityName, setCityName] = useState({
     city: ''
   })
+  const [icon, setIcon] = useState(weatherData?.weather[0]?.icon)
+
+  useEffect(() => {
+    setIcon(weatherData?.weather[0]?.icon)
+  }, [weatherData])
 
   function handleFahrenheit() {
     setFahrenheit(!fahrenheit)
@@ -37,28 +42,49 @@ export default function SidePanel(props) {
     setCity(cityName.city)
   }
 
+  function weekDay() {
+    switch (dayjs().format('dddd')) {
+      case 'Monday':
+        return 'Segunda-feira';
+      case 'Tuesday':
+        return 'Terça-feira';
+      case 'Wednesday':
+        return 'Quarta-feira';
+      case 'Thursday':
+        return 'Quinta-feira';
+      case 'Friday':
+        return 'Sexta-feira';
+      case 'Saturday':
+        return 'Sabado';
+      case 'Sunday':
+        return 'Domingo';
+      default:
+        return '';
+    }
+  }
+
   return (
     <>
-      <Panel style={{ backgroundColor: darkMode ? '#232526' : '#EFEFEF' }}>
+      <Panel style={{ backgroundColor: darkMode ? '#232526' : '#FFF' }}>
         <Header>
-          <Casaquinho style={{ backgroundColor: darkMode ? '#212324' : '#EFEFEF' }} src={casaquinho} alt="casaquinho" />
+          <Casaquinho style={{ backgroundColor: darkMode ? '#212324' : '#FFF' }} src={casaquinho} alt="casaquinho" />
           <h1 style={{ color: darkMode ? '#EFEFEF' : '#222' }}>Levo um casaquinho?</h1>
         </Header>
         <Search style={{ backgroundColor: darkMode ? '#2c2f30' : '#EFEFEF' }} onSubmit={(event) => handleSubmit(event)}>
           <img src={search} alt="" />
-          <input style={{ backgroundColor: darkMode ? '#2c2f30' : '#EFEFEF' }} autoComplete="off" placeholder={'Procure por uma cidade'} value={cityName.city} name="city" onChange={handleChange} type="text" />
+          <input style={{ backgroundColor: darkMode ? '#2c2f30' : '#EFEFEF', color: darkMode ? '#EFEFEF' : '#222' }} autoComplete="off" placeholder={'Procure por uma cidade'} value={cityName.city} name="city" onChange={handleChange} type="text" />
         </Search>
         <Temp>
           <div>
-            <img src={sol} alt="" />
-            <h1>{fahrenheit ? (weatherData?.main?.temp * 1.8 + 32).toFixed(2) + "° F" : weatherData?.main?.temp.toFixed(2) + "° C"}</h1>
+            <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`} alt="" />
+            <h1 style={{ color: mainColor }}>{fahrenheit ? (weatherData?.main?.temp * 1.8 + 32).toFixed(2) + "° F" : weatherData?.main?.temp.toFixed(2) + "° C"}</h1>
           </div>
           <p style={{ color: darkMode ? '#d4d0cb' : '#212324' }}>{weatherData ? weatherData?.weather[0]?.description.charAt(0).toUpperCase() + weatherData?.weather[0]?.description.slice(1) : ""}</p>
         </Temp>
         <Line />
         <Day>
           <p style={{ color: darkMode ? '#d4d0cb' : '#212324' }}>{dayjs().format('DD/MM/YYYY')}</p>
-          <p style={{ color: darkMode ? '#d4d0cb' : '#212324' }}>{dayjs().format('dddd') + ', ' + dayjs().format('hh:mm')}</p>
+          <p style={{ color: darkMode ? '#d4d0cb' : '#212324' }}>{weekDay() + ', ' + dayjs().format('hh:mm')}</p>
         </Day>
         <Toggle>
           <div>
@@ -279,7 +305,7 @@ const Toggle = styled.div`
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: #ec6e4c;
+    background-color: gray;
     -webkit-transition: .4s;
     transition: .4s;
   }
