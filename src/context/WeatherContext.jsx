@@ -10,11 +10,11 @@ export const WeatherProvider = ({ children }) => {
   const [city, setCity] = useState('Bauru');
 
   const getWeatherData = async () => {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},br&lang=pt_br&APPID=${import.meta.env.VITE_API_KEY}&units=metric`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=pt_br&APPID=${import.meta.env.VITE_API_KEY}&units=metric`;
     await axios.get(url).then((response) => {
       setWeatherData(response.data)
     }).catch((error) => {
-      alert("Confira se a cidade é do Brasil e se está digitada corretamente!")
+      alert("Confira se a cidade está digitada corretamente!")
     })
   }
 

@@ -23,7 +23,7 @@ export default function HomePage() {
       case 'Snow':
         return setMainColor('lightgrey');
       case 'Thunderstorm':
-        return setMainColor('purple');
+        return setMainColor('#aa00ff');
       case 'Drizzle':
         return setMainColor('lightblue');
       case 'Mist':

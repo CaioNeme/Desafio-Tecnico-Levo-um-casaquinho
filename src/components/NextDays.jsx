@@ -16,13 +16,13 @@ export default function NextDays(props) {
           <LineChart
             width={1000}
             height={600}
-            data={fahrenheit ? nextDaysData?.map((item) => ({ ...item, Temperature: (item.Temperature * 1.8 + 32).toFixed(2) })) : nextDaysData}
+            data={fahrenheit ? nextDaysData?.map((item) => ({ ...item, Temperature: (item.Temperature * 1.8 + 32).toFixed(0) })) : nextDaysData}
             margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
           >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="day" tick={{ fill: darkMode ? '#fff' : '#000' }} />
-            <YAxis formatter={fahrenheit ? (value) => `${(value * 1.8 + 32).toFixed(2)}° F` : (value) => `${value}° C`} />
-            <Tooltip formatter={fahrenheit ? (value) => `${(value * 1.8 + 32).toFixed(2)}° F` : (value) => `${value}° C`} />
+            <YAxis formatter={fahrenheit ? (value) => `${(value * 1.8 + 32).toFixed(0)}° F` : (value) => `${value}° C`} />
+            <Tooltip formatter={fahrenheit ? (value) => `${(value * 1.8 + 32).toFixed(0)}° F` : (value) => `${value}° C`} />
             <Line type="monotone" dataKey="Temperature" stroke={darkMode ? mainColor : '#000'} activeDot={{ r: 8 }} />
           </LineChart>
         </Graphic>

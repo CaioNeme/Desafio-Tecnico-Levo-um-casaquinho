@@ -77,7 +77,7 @@ export default function SidePanel(props) {
         <Temp>
           <div>
             <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`} alt="" />
-            <h1 style={{ color: mainColor }}>{fahrenheit ? (weatherData?.main?.temp * 1.8 + 32).toFixed(2) + "° F" : weatherData?.main?.temp.toFixed(2) + "° C"}</h1>
+            <h1 style={{ color: mainColor }}>{fahrenheit ? (weatherData?.main?.temp * 1.8 + 32).toFixed(0) + "° F" : weatherData?.main?.temp.toFixed(0) + "° C"}</h1>
           </div>
           <p style={{ color: darkMode ? '#d4d0cb' : '#212324' }}>{weatherData ? weatherData?.weather[0]?.description.charAt(0).toUpperCase() + weatherData?.weather[0]?.description.slice(1) : ""}</p>
         </Temp>

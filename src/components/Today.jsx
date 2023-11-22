@@ -11,11 +11,11 @@ export default function Today(props) {
       <Metrics>
         <div>
           <p>Mínima</p>
-          <h2>{fahrenheit ? (weatherData?.main?.temp_min * 1.8 + 32).toFixed(2) + "° F" : weatherData?.main?.temp_min.toFixed(2) + "° C"}</h2>
+          <h2>{fahrenheit ? (weatherData?.main?.temp_min * 1.8 + 32).toFixed(0) + "° F" : weatherData?.main?.temp_min.toFixed(0) + "° C"}</h2>
         </div>
         <div>
           <p>Máxima</p>
-          <h2>{fahrenheit ? (weatherData?.main?.temp_max * 1.8 + 32).toFixed(2) + "° F" : weatherData?.main?.temp_max.toFixed(2) + "° C"}</h2>
+          <h2>{fahrenheit ? (weatherData?.main?.temp_max * 1.8 + 32).toFixed(0) + "° F" : weatherData?.main?.temp_max.toFixed(0) + "° C"}</h2>
         </div>
         <div>
           <p>Umidade</p>
