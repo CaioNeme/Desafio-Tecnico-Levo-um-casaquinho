@@ -20,7 +20,7 @@ export const WeatherProvider = ({ children }) => {
 
 
   const getWeatherForecast = async () => {
-    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city},br&lang=pt_br&cnt=40&APPID=${import.meta.env.VITE_API_KEY}&units=metric`;
+    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=pt_br&cnt=40&APPID=${import.meta.env.VITE_API_KEY}&units=metric`;
     try {
       const response = await axios.get(url);
       const data = response.data.list.map(item => ({
