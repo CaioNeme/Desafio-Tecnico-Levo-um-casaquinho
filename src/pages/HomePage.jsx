@@ -58,7 +58,7 @@ export default function HomePage() {
           <h1 style={{ color: darkMode ? '#d4d0cb' : '#222' }}>{weatherData?.name}</h1>
           <p style={{ color: darkMode ? '#d4d0cb' : '#222' }}>Lat:  {weatherData?.coord?.lat}  Long: {weatherData?.coord?.lon}</p>
         </Local>
-        {today ? <Today mainColor={mainColor} setMainColor={setMainColor} fahrenheit={fahrenheit} setFahrenheit={setFahrenheit} darkMode={darkMode} setDarkMode={setDarkMode} /> : <NextDays mainColor={mainColor} setMainColor={setMainColor} fahrenheit={fahrenheit} setFahrenheit={setFahrenheit} darkMode={darkMode} setDarkMode={setDarkMode} />}
+        {today ? <Today fahrenheit={fahrenheit} darkMode={darkMode} /> : <NextDays fahrenheit={fahrenheit} darkMode={darkMode} mainColor={mainColor} />}
         <Font style={{ color: darkMode ? '#d4d0cb' : '#222' }}>Dados fornecidos pela <a style={{ color: darkMode ? mainColor : '#0364b8' }} target="_blank" href="https://openweathermap.org/api">Open Weather API</a></Font>
       </Content>
     </Conteiner>

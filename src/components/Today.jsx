@@ -5,8 +5,6 @@ import { WeatherContext } from '../context/WeatherContext';
 export default function Today(props) {
   const { weatherData } = useContext(WeatherContext)
   const { fahrenheit } = props
-  const { mainColor, setMainColor } = props
-  const { darkMode } = props
 
   return (
     <>
