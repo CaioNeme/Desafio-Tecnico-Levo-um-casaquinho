@@ -64,14 +64,12 @@ export default function HomePage() {
     </Conteiner>
   )
 }
-//* Conteiner
 const Conteiner = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
   box-sizing: border-box;
 `;
-//* Content
 const Content = styled.div`
   width: 65%;
   height: 100vh;
@@ -105,7 +103,7 @@ const Local = styled.div`
   h1{
     color: #222;
     font-family: Poppins;
-    font-size: 150px;
+    font-size: 110px;
     font-style: normal;
     font-weight: 400;
     line-height: 48px;
