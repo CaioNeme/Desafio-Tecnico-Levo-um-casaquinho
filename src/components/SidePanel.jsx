@@ -271,7 +271,7 @@ const Toggle = styled.div`
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
-    line-height: 48px; /* 200% */
+    line-height: 48px;
   }
   .switch {
     position: relative;

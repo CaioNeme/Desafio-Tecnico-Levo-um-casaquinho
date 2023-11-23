@@ -34,5 +34,5 @@ const Graphic = styled.div`
   width: 1150px;
   height: 633px;
   margin-left: 50px;
-
+  font-family: Poppins;
 `;

@@ -14,23 +14,28 @@ export const WeatherProvider = ({ children }) => {
     await axios.get(url).then((response) => {
       setWeatherData(response.data)
     }).catch((error) => {
-      alert("Confira se a cidade está digitada corretamente!")
+      if (error.response.status === 404) {
+        alert("Confira se a cidade está digitada corretamente!")
+      } else if (error.response.status === 401 || error.response.status === 400) {
+        alert("Confira se suas credenciais de acesso estão corretas!")
+      } else {
+        alert("Algo de errado aconteceu!")
+        console.error(error);
+      }
     })
+
   }
 
 
   const getWeatherForecast = async () => {
     const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=pt_br&cnt=40&APPID=${import.meta.env.VITE_API_KEY}&units=metric`;
-    try {
-      const response = await axios.get(url);
+    await axios.get(url).then((response) => {
       const data = response.data.list.map(item => ({
         day: dayjs(item.dt_txt).format('(DD/MM), ddd'),
         Temperature: item.main.temp_max
       }));
       setNextDaysData(data);
-    } catch (error) {
-      console.error(error);
-    }
+    })
   };
 
   useEffect(() => {

@@ -21,13 +21,13 @@ export default function HomePage() {
       case 'Rain':
         return setMainColor('#4B91E1');
       case 'Snow':
-        return setMainColor('lightgrey');
+        return setMainColor('#A8A8A8');
       case 'Thunderstorm':
         return setMainColor('#aa00ff');
       case 'Drizzle':
-        return setMainColor('lightblue');
+        return setMainColor('#ACC5E6');
       case 'Mist':
-        return setMainColor('lightgrey');
+        return setMainColor('#A8A8A8');
       default:
         return setMainColor('black');
     }
