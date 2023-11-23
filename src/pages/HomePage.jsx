@@ -72,7 +72,6 @@ const Conteiner = styled.div`
 `;
 const Content = styled.div`
   width: 65%;
-  /* height: 100%; */
   background-color:#EFEFEF;
   box-sizing: border-box;
 `;

@@ -113,7 +113,6 @@ export default function SidePanel(props) {
 const Panel = styled.div`
   box-sizing: border-box;
   width: 35%;
-  /* height: 100%; */
   background-color: #fff;
   box-sizing: border-box;
   padding-left: 50px;
