@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { WeatherContext } from '../context/WeatherContext';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 import styled from 'styled-components';
 
 export default function NextDays(props) {

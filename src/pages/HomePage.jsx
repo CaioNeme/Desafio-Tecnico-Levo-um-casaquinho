@@ -72,7 +72,7 @@ const Conteiner = styled.div`
 `;
 const Content = styled.div`
   width: 65%;
-  height: 100%;
+  /* height: 100%; */
   background-color:#EFEFEF;
   box-sizing: border-box;
 `;
@@ -80,7 +80,6 @@ const Menu = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 100%;
   padding-left: 50px;
   margin-top: 40px;
   h1{

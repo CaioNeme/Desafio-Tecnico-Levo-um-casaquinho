@@ -144,7 +144,6 @@ const Search = styled.form`
   flex-shrink: 0;
   border-radius: 24px;
   background: #EDEDEF;
-  /* box-shadow: 0px 24px 48px 0px rgba(49, 79, 124, 0.08); */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -159,20 +158,16 @@ const Search = styled.form`
   input{
     border-radius: 24px;
     background: #EDEDEF;
-    /* box-shadow: 0px 24px 48px 0px rgba(49, 79, 124, 0.08); */
-
     color: #424243;
     font-family: Montserrat;
     font-size: 22px;
     font-style: normal;
     font-weight: 500;
     line-height: 24px;
-
     width: 415px;
     height: 60px;
     flex-shrink: 0;
     background-color: #EDEDEF;
-
     border : none;
   }
   input:focus, select:focus {
