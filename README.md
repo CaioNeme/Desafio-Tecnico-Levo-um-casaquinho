@@ -20,7 +20,7 @@ Uma das principais dores de quem vai dar um passeio ou pretende ir para algum de
 
 <img src="./public/Images/CasaquinhoGraph.png"/>
 
-##### Design (Próximos Dias + DarkMode + Fahrenheit)
+##### Design (Próximos Dias + DarkMode)
 
 <img src="./public/Images/CasaquinhoGraphDarkMode.png"/>
 
