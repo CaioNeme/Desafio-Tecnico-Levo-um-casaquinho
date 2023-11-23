@@ -67,7 +67,7 @@ export default function SidePanel(props) {
     <>
       <Panel style={{ backgroundColor: darkMode ? '#232526' : '#FFF' }}>
         <Header>
-          <Casaquinho style={{ backgroundColor: darkMode ? '#212324' : '#FFF' }} src={casaquinho} alt="casaquinho" />
+          <Casaquinho style={{ backgroundColor: darkMode ? '#232526' : '#FFF' }} src={casaquinho} alt="casaquinho" />
           <h1 style={{ color: darkMode ? '#EFEFEF' : '#222' }}>Levo um casaquinho?</h1>
         </Header>
         <Search style={{ backgroundColor: darkMode ? '#2c2f30' : '#EFEFEF' }} onSubmit={(event) => handleSubmit(event)}>
@@ -111,11 +111,13 @@ export default function SidePanel(props) {
 }
 
 const Panel = styled.div`
+  box-sizing: border-box;
   width: 35%;
-  height: 100vh;
+  /* height: 100%; */
   background-color: #fff;
   box-sizing: border-box;
-  padding: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
   padding-top: 20px;
   display: flex;
   flex-direction: column;
@@ -142,11 +144,11 @@ const Search = styled.form`
   flex-shrink: 0;
   border-radius: 24px;
   background: #EDEDEF;
-  box-shadow: 0px 24px 48px 0px rgba(49, 79, 124, 0.08);
+  /* box-shadow: 0px 24px 48px 0px rgba(49, 79, 124, 0.08); */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 50px;
+  margin-top: 25px;
   img{
     width: 37px;
     height: 40px;
@@ -157,7 +159,7 @@ const Search = styled.form`
   input{
     border-radius: 24px;
     background: #EDEDEF;
-    box-shadow: 0px 24px 48px 0px rgba(49, 79, 124, 0.08);
+    /* box-shadow: 0px 24px 48px 0px rgba(49, 79, 124, 0.08); */
 
     color: #424243;
     font-family: Montserrat;
@@ -167,7 +169,7 @@ const Search = styled.form`
     line-height: 24px;
 
     width: 415px;
-    height: 80px;
+    height: 60px;
     flex-shrink: 0;
     background-color: #EDEDEF;
 
@@ -227,7 +229,7 @@ const Line = styled.div`
   width: 395px;
   height: 5px;
   background-color: gray;
-  margin: 35px;
+  margin: 15px;
 `;
 const Day = styled.div`
   display: flex;
@@ -255,7 +257,7 @@ const Toggle = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 50px;
+  margin-top: 30px;
 
   div{
     display: flex;
@@ -335,7 +337,7 @@ const Footer = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  height: 100%;
+  padding-bottom: 20px;
   p{
     color: #222;
     font-family: Poppins;

@@ -31,29 +31,26 @@ export default function Today(props) {
   )
 }
 const Metrics = styled.div`
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      div{
-        display: flex;
-      flex-direction: column;
-      align-items:flex-start;
-      justify-content: center;
-      box-sizing: border-box;
-      padding: 50px;
-
-      width: 500px;
-      height: 180px;
-      flex-shrink: 0;
-      margin-top: 50px;
-
-      border-radius: 32px;
-      background: linear-gradient(117deg, #4D4494 22.83%, #4F43AE 90.03%);
-      box-shadow: 0px 24px 48px 0px rgba(49, 79, 124, 0.08);
-
-      p{
-        color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  div{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 50px;
+    width: 450px;
+    height: 180px;
+    flex-shrink: 0;
+    margin-top: 50px;
+    border-radius: 32px;
+    background: linear-gradient(117deg, #4D4494 22.83%, #4F43AE 90.03%);
+    box-shadow: 0px 24px 48px 0px rgba(49, 79, 124, 0.08);
+    p{
+      color: #FFF;
       font-family: Poppins;
       font-size: 22px;
       font-style: normal;
@@ -61,9 +58,8 @@ const Metrics = styled.div`
       line-height: 24px;
       margin-bottom:15px;
     }
-
-      h2{
-        color: #FFF;
+    h2{
+      color: #FFF;
       font-family: Poppins;
       font-size: 48px;
       font-style: normal;
@@ -73,12 +69,12 @@ const Metrics = styled.div`
   }
       `;
 const Casaco = styled.p`
-      margin: 15px;
-      padding: 50px;
-      color: #AFADAD;
-      font-family: Poppins;
-      font-size: 24px;
-      font-style: italic;
-      font-weight: 400;
-      line-height: 48px;
-      `;
+  margin-top: 15px;
+  padding-left: 50px;
+  color: #AFADAD;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 48px;
+`;

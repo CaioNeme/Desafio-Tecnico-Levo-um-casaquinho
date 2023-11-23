@@ -65,14 +65,14 @@ export default function HomePage() {
   )
 }
 const Conteiner = styled.div`
+  box-sizing: border-box;
   width: 100%;
   height: 100vh;
   display: flex;
-  box-sizing: border-box;
 `;
 const Content = styled.div`
   width: 65%;
-  height: 100vh;
+  height: 100%;
   background-color:#EFEFEF;
   box-sizing: border-box;
 `;
@@ -81,10 +81,10 @@ const Menu = styled.div`
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  padding: 50px;
-  
+  padding-left: 50px;
+  margin-top: 40px;
   h1{
-    color: #C8C8C8; // #222
+    color: #C8C8C8;
     font-family: Poppins;
     font-size: 48px;
     font-style: normal;
@@ -95,7 +95,7 @@ const Menu = styled.div`
 `;
 const Local = styled.div`
   padding-left: 50px;
-  margin-top: 50px;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -103,7 +103,7 @@ const Local = styled.div`
   h1{
     color: #222;
     font-family: Poppins;
-    font-size: 110px;
+    font-size: 90px;
     font-style: normal;
     font-weight: 400;
     line-height: 48px;
@@ -121,7 +121,8 @@ const Local = styled.div`
 `;
 const Font = styled.p`
   padding-left: 50px;
-  margin-top: 25px;
+  margin-top: 38px;
+  margin-bottom: auto;
   color: #222;
   font-family: Poppins;
   font-size: 24px;
