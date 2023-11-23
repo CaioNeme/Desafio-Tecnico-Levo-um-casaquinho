@@ -4,7 +4,9 @@ Uma das principais dores de quem vai dar um passeio ou pretende ir para algum de
 
 ## Demo
 
-<a href="https://desafio-tecnico-levo-um-casaquinho.vercel.app/">Clique Aqui</a>
+###### <a href="https://desafio-tecnico-levo-um-casaquinho.vercel.app/">Deploy</a>
+
+###### <a href="https://www.youtube.com/watch?v=rAm_QCkwjbk">Video Demonstração</a>
 
 ## Preview
 
