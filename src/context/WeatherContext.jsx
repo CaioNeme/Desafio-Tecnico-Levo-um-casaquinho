@@ -18,6 +18,8 @@ export const WeatherProvider = ({ children }) => {
         alert("Confira se a cidade está digitada corretamente!")
       } else if (error.response.status === 401 || error.response.status === 400) {
         alert("Confira se suas credenciais de acesso estão corretas!")
+      } else if (error.response.status === 429) {
+        alert("A API está com muitas requisições!")
       } else {
         alert("Algo de errado aconteceu!")
         console.error(error);
