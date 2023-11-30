@@ -14,7 +14,7 @@ export default function NextDays(props) {
       <>
         <Graphic>
           <LineChart
-            width={1050}
+            width={1000}
             height={600}
             data={fahrenheit ? nextDaysData?.map((item) => ({ ...item, Temperature: (item.Temperature * 1.8 + 32).toFixed(0) })) : nextDaysData}
             margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
@@ -35,7 +35,7 @@ export default function NextDays(props) {
 }
 const Graphic = styled.div`
   width: 1150px;
-  height: 633px;
+  height: 600px;
   margin-left: 50px;
   font-family: Poppins;
 `;

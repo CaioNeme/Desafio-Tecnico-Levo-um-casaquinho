@@ -26,7 +26,7 @@ export default function Today(props) {
           <h2>{weatherData?.wind?.speed} m/s</h2>
         </div>
       </Metrics>
-      {weatherData?.main?.temp_min > 17 ? <Jacket> Não, você não deve levar um casaquinho!</Jacket> : <Jacket>Leve um casaquinho!</Jacket>}
+      {weatherData?.main?.temp_min > 17 ? <Jacket> Não, você não deve levar um casaquinho!</Jacket> : <Jacket>Sim, você deve levar um casaquinho!</Jacket>}
     </>
   )
 }
@@ -77,4 +77,5 @@ const Jacket = styled.p`
   font-style: italic;
   font-weight: 400;
   line-height: 48px;
+  margin-bottom: 50px;
 `;
