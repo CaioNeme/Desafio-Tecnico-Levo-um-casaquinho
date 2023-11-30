@@ -14,13 +14,13 @@ export default function NextDays(props) {
       <>
         <Graphic>
           <LineChart
-            width={1000}
+            width={1050}
             height={600}
             data={fahrenheit ? nextDaysData?.map((item) => ({ ...item, Temperature: (item.Temperature * 1.8 + 32).toFixed(0) })) : nextDaysData}
             margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="day" tick={{ fill: darkMode ? '#fff' : '#000' }} tickFormatter={(value) => value} />
+            <XAxis type="category" dataKey="day" tick={{ fill: darkMode ? '#fff' : '#000' }} tickFormatter={(value) => value} tickCount={5} />
             <YAxis tick={{ fill: darkMode ? '#fff' : '#000' }} type="number" domain={fahrenheit ? [0, 120] : [0, 45]}
               tickCount={10}
               tickFormatter={(value) => fahrenheit ? `${value}°F` : `${value}°C`}

@@ -29,13 +29,15 @@ export const WeatherProvider = ({ children }) => {
   const getWeatherForecast = async () => {
     const urlForecastAPI = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=pt_br&cnt=40&APPID=${import.meta.env.VITE_API_KEY}&units=metric`;
     await axios.get(urlForecastAPI).then((response) => {
-      const data = response.data.list.map(item => ({
-        day: dayjs(item.dt_txt).format(`DD/MM`) + `(${setDay(dayjs(item.dt_txt).format('ddd'))})`,
-        Temperature: item.main.temp_max
-      }));
+      const data = [];
+      for (let i = 0; i < 40; i += 5) {
+        data.push({ Temperature: response.data.list[i].main.temp, day: dayjs(response.data.list[i].dt_txt).format(`DD/MM`) + `(${setDay(dayjs(response.data.list[i].dt_txt).format(`ddd`))})` });;
+      }
+      console.log(data)
       setNextDaysData(data);
-    })
-  };
+    });
+  }
+
 
   function setDay(day) {
     switch (day) {
