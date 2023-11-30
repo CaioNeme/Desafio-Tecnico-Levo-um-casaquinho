@@ -20,9 +20,12 @@ export default function NextDays(props) {
             margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="day" tick={{ fill: darkMode ? '#fff' : '#000' }} />
-            <YAxis formatter={fahrenheit ? (value) => `${(value * 1.8 + 32).toFixed(0)}° F` : (value) => `${value}° C`} />
-            <Tooltip formatter={fahrenheit ? (value) => `${(value * 1.8 + 32).toFixed(0)}° F` : (value) => `${value}° C`} />
+            <XAxis dataKey="day" tick={{ fill: darkMode ? '#fff' : '#000' }} tickFormatter={(value) => value} />
+            <YAxis tick={{ fill: darkMode ? '#fff' : '#000' }} type="number" domain={fahrenheit ? [0, 120] : [0, 45]}
+              tickCount={10}
+              tickFormatter={(value) => fahrenheit ? `${value}°F` : `${value}°C`}
+            />
+            <Tooltip formatter={fahrenheit ? (value) => `${(value)}° F` : (value) => `${value}° C`} />
             <Line type="monotone" dataKey="Temperature" stroke={darkMode ? mainColor : '#000'} activeDot={{ r: 8 }} />
           </LineChart>
         </Graphic>

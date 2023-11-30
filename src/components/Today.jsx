@@ -26,7 +26,7 @@ export default function Today(props) {
           <h2>{weatherData?.wind?.speed} m/s</h2>
         </div>
       </Metrics>
-      {weatherData?.main?.temp_min > 17 ? <Casaco> Não, você não deve levar um casaquinho!</Casaco> : <Casaco>Leve um casaquinho!</Casaco>}
+      {weatherData?.main?.temp_min > 17 ? <Jacket> Não, você não deve levar um casaquinho!</Jacket> : <Jacket>Leve um casaquinho!</Jacket>}
     </>
   )
 }
@@ -67,8 +67,8 @@ const Metrics = styled.div`
       line-height: 36px; 
     }
   }
-      `;
-const Casaco = styled.p`
+`;
+const Jacket = styled.p`
   margin-top: 15px;
   padding-left: 50px;
   color: #AFADAD;

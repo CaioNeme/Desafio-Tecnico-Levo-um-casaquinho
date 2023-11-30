@@ -67,12 +67,12 @@ export default function SidePanel(props) {
     <>
       <Panel style={{ backgroundColor: darkMode ? '#232526' : '#FFF' }}>
         <Header>
-          <Casaquinho style={{ backgroundColor: darkMode ? '#232526' : '#FFF' }} src={casaquinho} alt="casaquinho" />
+          <LittleJacket style={{ backgroundColor: darkMode ? '#232526' : '#FFF' }} src={casaquinho} alt="casaquinho" />
           <h1 style={{ color: darkMode ? '#EFEFEF' : '#222' }}>Levo um casaquinho?</h1>
         </Header>
         <Search style={{ backgroundColor: darkMode ? '#2c2f30' : '#EFEFEF' }} onSubmit={(event) => handleSubmit(event)}>
           <img src={search} alt="" />
-          <input style={{ backgroundColor: darkMode ? '#2c2f30' : '#EFEFEF', color: darkMode ? '#EFEFEF' : '#222' }} autoComplete="off" placeholder={'Procure por uma cidade'} value={cityName.city} name="city" onChange={handleChange} type="text" />
+          <input style={{ backgroundColor: darkMode ? '#2c2f30' : '#EFEFEF', color: darkMode ? '#EFEFEF' : '#222' }} autoComplete="off" placeholder={'Procure por uma cidade'} value={cityName.city} name="city" onChange={(event) => handleChange(event)} type="text" />
         </Search>
         <Temp>
           <div>
@@ -131,7 +131,7 @@ const Panel = styled.div`
     line-height: 48px;
   }
 `;
-const Casaquinho = styled.img`
+const LittleJacket = styled.img`
   width: 120px;
   height: 120px;
   flex-shrink: 0;

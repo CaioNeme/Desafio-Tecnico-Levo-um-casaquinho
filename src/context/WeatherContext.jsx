@@ -10,8 +10,8 @@ export const WeatherProvider = ({ children }) => {
   const [city, setCity] = useState('Bauru');
 
   const getWeatherData = async () => {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=pt_br&APPID=${import.meta.env.VITE_API_KEY}&units=metric`;
-    await axios.get(url).then((response) => {
+    const urlTodayAPI = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=pt_br&APPID=${import.meta.env.VITE_API_KEY}&units=metric`;
+    await axios.get(urlTodayAPI).then((response) => {
       setWeatherData(response.data)
     }).catch((error) => {
       if (error.response.status === 404) {
@@ -25,20 +25,38 @@ export const WeatherProvider = ({ children }) => {
         console.error(error);
       }
     })
-
   }
-
-
   const getWeatherForecast = async () => {
-    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=pt_br&cnt=40&APPID=${import.meta.env.VITE_API_KEY}&units=metric`;
-    await axios.get(url).then((response) => {
+    const urlForecastAPI = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=pt_br&cnt=40&APPID=${import.meta.env.VITE_API_KEY}&units=metric`;
+    await axios.get(urlForecastAPI).then((response) => {
       const data = response.data.list.map(item => ({
-        day: dayjs(item.dt_txt).format('(DD/MM), ddd'),
+        day: dayjs(item.dt_txt).format(`DD/MM`) + `(${setDay(dayjs(item.dt_txt).format('ddd'))})`,
         Temperature: item.main.temp_max
       }));
       setNextDaysData(data);
     })
   };
+
+  function setDay(day) {
+    switch (day) {
+      case 'Sun':
+        return 'Dom';
+      case 'Mon':
+        return 'Seg';
+      case 'Tue':
+        return 'Ter';
+      case 'Wed':
+        return 'Qua';
+      case 'Thu':
+        return 'Qua';
+      case 'Fri':
+        return 'Sex';
+      case 'Sat':
+        return 'Sab';
+      default:
+        return '';
+    }
+  }
 
   useEffect(() => {
     getWeatherData()
