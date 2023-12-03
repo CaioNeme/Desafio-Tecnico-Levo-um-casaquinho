@@ -102,9 +102,7 @@ export default function SidePanel(props) {
             <p style={{ color: darkMode ? '#d4d0cb' : '#212324' }}>Dark Mode</p>
           </div>
         </Toggle>
-        <Footer>
-          <p style={{ color: darkMode ? '#d4d0cb' : '#212324' }}>Todos os direitos reservados. 2023.</p>
-        </Footer>
+        <Footer style={{ color: darkMode ? '#d4d0cb' : '#222' }}>Todos os direitos reservados. 2023.</Footer>
       </Panel>
     </>
   )
@@ -122,6 +120,17 @@ const Panel = styled.div`
   flex-direction: column;
   align-items: center;
 
+  @media screen {
+    @media (max-width: 1140px) {
+      width: 100%;
+    }
+
+    @media (max-width: 1440px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
   h1{
     color: #222;
     font-family: 'Poppins', sans-serif;
@@ -136,6 +145,17 @@ const LittleJacket = styled.img`
   height: 120px;
   flex-shrink: 0;
   margin-right: 10px;
+
+  @media screen {
+    @media (max-width: 1140px) {
+      width: 80px;
+    }
+
+    @media (max-width: 1440px) {
+      width: 100px;
+      height: 100px;
+    }
+  }
 `;
 const Search = styled.form`
   width: 500px;
@@ -173,12 +193,28 @@ const Search = styled.form`
     box-shadow: 0 0 0 0;
     border: 0 none;
     outline: 0;
-} 
+  }
+
+  @media (max-width: 1440px) {
+    width: 400px;
+    height: 60px;
+    input{
+      width: 300px;
+    }
+  }
+
 `;
 const Header = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1440px) {
+    h1{
+      font-size: 32px;
+
+    }
+  }
 `;
 const Temp = styled.div`
   display: flex;
@@ -215,6 +251,14 @@ const Temp = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 48px;
+  }
+
+  @media (max-width: 1440px) {
+    div{
+      h1{
+        font-size: 45px;
+      }
+    }
   }
 
 
@@ -332,12 +376,16 @@ const Footer = styled.div`
   justify-content: center;
   align-items: flex-end;
   padding-bottom: 20px;
-  p{
-    color: #222;
-    font-family: Poppins;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 48px;
+  color: #222;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px;
+
+  @media screen {
+    @media (max-width: 1440px) {
+      display: none;
+    }
   }
 `;

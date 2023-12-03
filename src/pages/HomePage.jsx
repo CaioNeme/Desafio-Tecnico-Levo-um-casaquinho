@@ -62,6 +62,7 @@ export default function HomePage() {
             </Current>
             {today ? <Today fahrenheit={fahrenheit} darkMode={darkMode} /> : <NextDays fahrenheit={fahrenheit} darkMode={darkMode} mainColor={mainColor} />}
             <Font style={{ color: darkMode ? '#d4d0cb' : '#222' }}>Dados fornecidos pela <a style={{ color: darkMode ? mainColor : '#0364b8' }} target="_blank" href="https://openweathermap.org/api">Open Weather API</a></Font>
+            <Font className='copyright' style={{ color: darkMode ? '#d4d0cb' : '#222' }}>Todos os direitos reservados. 2023.</Font>
           </Content>
         </Conteiner>
         :
@@ -69,19 +70,48 @@ export default function HomePage() {
           <h1>Carregando...</h1>
         </Loading>}
     </>
-
   )
 }
 const Conteiner = styled.div`
   box-sizing: border-box;
   width: 100%;
-  height: 100vh;
   display: flex;
+
+  .copyright{
+    display: none;
+  }
+
+  @media screen {
+    @media (max-width: 1140px) {
+      flex-direction: column;
+      justify-items: center;
+      align-items: center;
+      .copyright{
+        display: block;
+      } 
+    }
+    @media (max-width: 1440px) {
+      .copyright{
+        display: block;
+      }
+    }
+  }
 `;
 const Content = styled.div`
   width: 65%;
+  height: 100vh;
   background-color:#EFEFEF;
   box-sizing: border-box;
+
+  @media screen {
+    @media (max-width: 1140px) {
+      width: 100%;
+    }
+    @media (max-width: 1440px) {
+      width: 100%;
+      height: 100%;
+    }
+  }
 `;
 const Menu = styled.div`
   display: flex;
@@ -97,6 +127,15 @@ const Menu = styled.div`
     font-weight: 400;
     line-height: 48px; 
     margin-right: 70px;
+  }
+
+  @media screen {
+    @media (max-width: 1140px) {
+      justify-content: center;
+      h1{
+        margin-right: 30px;
+      }
+    }
   }
 `;
 const Current = styled.div`
@@ -123,6 +162,16 @@ const Current = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 48px;
+  }
+
+  @media screen {
+    @media (max-width: 1140px) {
+      justify-content: center;
+      align-items: center;
+      h1{
+        margin-right: 30px;
+      }
+    }
   }
 `;
 const Font = styled.p`
@@ -155,3 +204,17 @@ const Loading = styled.div`
     margin-right: 20px;
   }
 `
+const Footer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 20px;
+  p{
+    color: #222;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px;
+  }
+`;

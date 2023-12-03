@@ -33,7 +33,6 @@ export const WeatherProvider = ({ children }) => {
       for (let i = 0; i < 40; i += 5) {
         data.push({ Temperature: response.data.list[i].main.temp, day: dayjs(response.data.list[i].dt_txt).format(`DD/MM`) + `(${setDay(dayjs(response.data.list[i].dt_txt).format(`ddd`))})` });;
       }
-      console.log(data)
       setNextDaysData(data);
     });
   }

@@ -35,6 +35,19 @@ const Metrics = styled.div`
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
+
+  @media (max-width: 1140px){
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  @media (max-width: 1440px){
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   div{
     display: flex;
     flex-direction: column;

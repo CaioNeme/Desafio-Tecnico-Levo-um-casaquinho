@@ -35,7 +35,15 @@ export default function NextDays(props) {
 }
 const Graphic = styled.div`
   width: 1150px;
-  height: 600px;
+  height: 100vh;
   margin-left: 50px;
   font-family: Poppins;
+
+  @media (max-width: 1440px) {
+    width: 100%;
+    height: 600px;
+    margin-left: 0;
+    margin-top: 20px;
+    margin-bottom: 100px;
+  }
 `;
